@@ -3,4 +3,5 @@ class MainPageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class LoginPageLocators(object):
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_FORM = (By.ID, "login_form")
+    REGISTRING_FORM = (By.ID, "register_form")
