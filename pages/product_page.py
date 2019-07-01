@@ -13,6 +13,7 @@ class ProductPage(BasePage):
         link.click()
         self.solve_quiz_and_get_code()
 
+
     def should_be_add_to_cart_button(self):
         assert self.is_element_present(*ProductPageLocator.ADD_CART_BOTTUN), "ADD Button  is not presented"
 
@@ -31,3 +32,6 @@ class ProductPage(BasePage):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+    def get_in_cart_book_name(self):
+        assert  self.book_name in self.browser.find_element(*ProductPageLocator.BOOK_NAME_IN_CART).text, "Book name in cart not equal  book name in add page  {}".format(
+            self.book_name)
